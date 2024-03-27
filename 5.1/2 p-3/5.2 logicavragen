@@ -1,0 +1,37 @@
+1: a.false, b.true, c.true, d.false, e.true, f.false, g.true, h.true
+2: a. 23, b. 5.0, c. 6.5, d. 3.5, e. 5
+3: a en c
+4: nee
+5: 1
+6: switch ($x) {
+    case 1:
+        $y += 5;
+        break;
+    case 2:
+        $y += 10;
+        break;
+    case 3:
+        $y += 15;
+        break;
+    case 4:
+        $y += 20;
+        break;
+    case 5:
+        $y += 25;
+        break;
+    default:
+        $y += 0;
+}
+7: a:0, b: 5
+8: $optelling = 0;
+$i = 0;
+
+while ($i <= 1000) {
+    $optelling = $optelling + 1;
+    $i++;
+}
+9: $saldo = 0;
+
+for ($x = 1; $saldo < 10000; $x++) {
+    $saldo = $saldo + $x;
+}
