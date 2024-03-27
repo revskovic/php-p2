@@ -172,20 +172,20 @@ function updatekroeg($row){
     // Maak een query 
     $sql = "UPDATE " . CRUD_TABLE .
     " SET 
-        merk = :merk, 
-        type = :type, 
-        prijs = :prijs
-    WHERE id = :id
+        naam = :naam, 
+        adres = :adres, 
+        plaats = :plaats
+    WHERE kroegcode = :kroegcode
     ";
 
     // Prepare query
     $stmt = $conn->prepare($sql);
     // Uitvoeren
     $stmt->execute([
-        ':merk'=>$row['merk'],
-        ':type'=>$row['type'],
-        ':prijs'=>$row['prijs'],
-        ':id'=>$row['id']
+        ':naam'=>$row['naam'],
+        ':adres'=>$row['adres'],
+        ':plaats'=>$row['plaats'],
+        ':kroegcode'=>$row['kroegcode']
     ]);
 
     // test of database actie is gelukt
@@ -199,17 +199,17 @@ function insertkroeg($post){
 
     // Maak een query 
     $sql = "
-        INSERT INTO " . CRUD_TABLE . " (merk, type, prijs)
-        VALUES (:merk, :type, :prijs) 
+        INSERT INTO " . CRUD_TABLE . " (naam, adres, plaats)
+        VALUES (:naam, :adres, :plaats) 
     ";
 
     // Prepare query
     $stmt = $conn->prepare($sql);
     // Uitvoeren
     $stmt->execute([
-        ':merk'=>$_POST['merk'],
-        ':type'=>$_POST['type'],
-        ':prijs'=>$_POST['prijs']
+        ':naam'=>$_POST['naam'],
+        ':adres'=>$_POST['adres'],
+        ':plaats'=>$_POST['plaats']
     ]);
 
     
@@ -226,14 +226,14 @@ function deletekroeg($id){
     // Maak een query 
     $sql = "
     DELETE FROM " . CRUD_TABLE . 
-    " WHERE id = :id";
+    " WHERE kroegcode = :kroegcode";
 
     // Prepare query
     $stmt = $conn->prepare($sql);
 
     // Uitvoeren
     $stmt->execute([
-    ':id'=>$_GET['id']
+    ':kroegcode'=>$_GET['kroegcode']
     ]);
 
     // test of database actie is gelukt
