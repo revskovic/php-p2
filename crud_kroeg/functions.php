@@ -49,9 +49,9 @@ include_once "config.php";
     $conn = connectDb();
 
     // Select data uit de opgegeven table methode prepare
-    $sql = "SELECT * FROM " . CRUD_TABLE . " WHERE id = :id";
+    $sql = "SELECT * FROM " . CRUD_TABLE . " WHERE kroegcode = :kroegcode";
     $query = $conn->prepare($sql);
-    $query->execute([':id'=>$id]);
+    $query->execute([':kroegcode'=>$id]);
     $result = $query->fetch();
 
     return $result;
@@ -185,7 +185,7 @@ function updatekroeg($row){
         ':naam'=>$row['naam'],
         ':adres'=>$row['adres'],
         ':plaats'=>$row['plaats'],
-        ':kroegcode'=>$row['kroegcode']
+        ':kroegcode'=>$row['id']
     ]);
 
     // test of database actie is gelukt

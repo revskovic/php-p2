@@ -16,9 +16,9 @@
     }
 
     // Test of id is meegegeven in de URL
-    if(isset($_GET['id'])){  
+    if(isset($_GET['kroegcode'])){  
         // Haal alle info van de betreffende id $_GET['id']
-        $id = $_GET['id'];
+        $id = $_GET['kroegcode'];
         $row = getkroeg($id);
     
 ?>
@@ -35,7 +35,7 @@
   <h2>Wijzig kroeg</h2>
   <form method="post">
     
-    <input type="hidden" id="naam" name="id" required value="<?php echo $row['id']; ?>"><br>
+    <input type="hidden" id="naam" name="id" required value="<?php echo $row['kroegcode']; ?>"><br>
     <label for="naam">naam:</label>
     <input type="text" id="naam" name="naam" required value="<?php echo $row['naam']; ?>"><br>
 

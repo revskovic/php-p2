@@ -4,11 +4,11 @@
 include 'functions.php';
 
 // Haal bier uit de database
-if(isset($_GET['id'])){
+if(isset($_GET['kroegcode'])){
 
     // test of insert gelukt is
-    if(deletekroeg($_GET['id']) == true){
-        echo '<script>alert("kroegcode: ' . $_GET['id'] . ' is verwijderd")</script>';
+    if(deletekroeg($_GET['kroegcode']) == true){
+        echo '<script>alert("kroegcode: ' . $_GET['kroegcode'] . ' is verwijderd")</script>';
         echo "<script> location.replace('crud_kroeg.php'); </script>";
     } else {
         echo '<script>alert("kroeg is NIET verwijderd")</script>';
