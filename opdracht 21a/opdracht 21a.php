@@ -21,12 +21,20 @@ class Animal {
     }
 }
 
-// Maak een nieuw Animal object aan
-$animal = new Animal("Lion");
+class Bird extends Animal {
+
+    public function Fly(): void {
+        echo "De vogel vliegt.<br>";
+    }
+}
+
+// Maak een nieuw Bird object aan genaamd "Eend"
+$eend = new Bird("Eend");
 
 // Roep de methoden aan
-$animal->Info();
-$animal->Eat();
-$animal->Sleep();
+$eend->Info();
+$eend->Eat();
+$eend->Sleep();
+$eend->Fly();
 
 ?>
