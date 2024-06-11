@@ -24,7 +24,7 @@ class Animal {
 class Bird extends Animal {
 
     public function Fly(): void {
-        echo "De vogel vliegt.<br>";
+        echo "De vogel vliegt.<br><br>";
     }
 }
 
@@ -37,4 +37,15 @@ $eend->Eat();
 $eend->Sleep();
 $eend->Fly();
 
+class Vis extends Animal {
+    public function swim(): void {
+        echo "De vis zwemt.<br>";
+    }
+}
+$vis = new Vis("karper");
+
+$vis->info();
+$vis->eat();
+$vis->sleep();
+$vis->swim();
 ?>
